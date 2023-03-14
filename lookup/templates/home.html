@@ -2,10 +2,26 @@
 
 {% block content %}
 
-<h1>Hello World</h1>
-<br/>
+<!-- {{ api }}<br/><br/> -->
+{% if api %}
+    {% if api == "Erorr..." %}
+        There was an error, please try aqain...
+    {% else %}
 
-{{api}}
+    <div class="col-md-6">
+        <div class="h-100 p-5 {{ category_color }}  border rounded-3">
+          <h2>{{ api.0.Category.Name }}</h2>
+          <p>Current {{ api.0.ReportingArea }} Air Quality: {{ api.0.AQI }}</p>
+          
+               <p>{{ category_description }}</p>
+
+        </div>
+      </div
+
+      
+    {% endif %}
+
+{% endif %}
 
 {% endblock %}
 
